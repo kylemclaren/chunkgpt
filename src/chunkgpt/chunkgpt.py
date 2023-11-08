@@ -91,18 +91,6 @@ class Chunker:
         if not isinstance(api_key, str):
             raise TypeError(f"invalid api_key '{api_key}'; must be a string")
         
-        try:
-            openai.api_key = api_key
-            models = [model['id'] for model in openai.Model.list()['data']]
-        except:
-            raise ValueError(f"Unable to access OpenAI's GPT model list; ensure your API key ({api_key}) is correct")
-
-        if not isinstance(model, str):
-            raise TypeError(f"invalid model ({model}); must be a string")
-        
-        if model not in models:
-            raise ValueError(f"invalid model ({model}); model not found in the list of available OpenAI models")
-        
         if not isinstance(max_chunk_length, int):
             raise TypeError(f"invalid max_chunk_length ({max_chunk_length}); must be an integer")
 
