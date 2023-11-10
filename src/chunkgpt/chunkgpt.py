@@ -259,6 +259,8 @@ class Chunker:
             token_limit = 32768
         elif self.model.startswith('gpt-4'):
             token_limit = 8192
+        elif self.model.startswith('llama2'):
+            token_limit = 4096
         else:
             token_limit = 4096
         return token_limit
