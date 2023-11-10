@@ -135,9 +135,9 @@ class Chunker:
         self.price_per_token = self._get_price_per_token()
 
         allowed_tokens = self._get_base_token_count() + summary_length + max_chunk_length
-        if allowed_tokens > self.token_limit:
-            exceeded_by = allowed_tokens - self.token_limit
-            raise ValueError(f"Combined summary_length and max_chunk_length exceeds {self.model}'s token_limit by {exceeded_by} tokens. Reduce one or more of these parameters or switch models.")
+        # if allowed_tokens > self.token_limit:
+        #     exceeded_by = allowed_tokens - self.token_limit
+        #     raise ValueError(f"Combined summary_length and max_chunk_length exceeds {self.model}'s token_limit by {exceeded_by} tokens. Reduce one or more of these parameters or switch models.")
 
         print("Initialized Chunker.")
 
